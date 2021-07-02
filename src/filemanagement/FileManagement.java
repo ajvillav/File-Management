@@ -16,7 +16,7 @@ public class FileManagement {
         File file = new File(fileName);
 
         try {
-            PrintWriter out = new PrintWriter(file);
+            var out = new PrintWriter(file); // shorter and cleaner codes using "var" in the left.
             out.close();
             System.out.println("File has been created.");
         } catch (FileNotFoundException ex) {
@@ -30,7 +30,7 @@ public class FileManagement {
         File file = new File(fileName);
 
         try {
-            PrintWriter out = new PrintWriter(file);
+            var out = new PrintWriter(file);
             out.println(content);
             out.close();
             System.out.println("File has been edited.");
@@ -44,7 +44,7 @@ public class FileManagement {
         File file = new File(fileName);
 
         try {
-            PrintWriter out = new PrintWriter(new FileWriter(file, true)); //El true es para ver si se va a hacer un append
+            var out = new PrintWriter(new FileWriter(file, true)); //El true es para ver si se va a hacer un append
             out.println(content);
             out.close();
             System.out.println("Information has been added to the file.");
@@ -60,7 +60,7 @@ public class FileManagement {
         File file = new File(fileName);
 
         try {
-            BufferedReader in = new BufferedReader(new FileReader(file));
+            var in = new BufferedReader(new FileReader(file));
             String read = in.readLine();
 
             while (read != null) {
